@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="78212ac5-2ca1-4e17-8181-f6d3b8b1e0a1" name="zhineng18">
+        <fileTransfer rootFolder="/home/zhineng18/CheXNet/home/zhineng18/CheXNet" accessType="SFTP" host="218.192.172.56" port="28" sshConfigId="31f6a46b-126e-4bff-b364-3a982d2cd569" sshConfig="zhineng18@218.192.172.56:28 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
