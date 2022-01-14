@@ -29,7 +29,6 @@ if __name__ == '__main__':
                                                                                  std=[0.229, 0.224, 0.225])
                                                 ])
     img = transform(img)
-
     model_path = 'weights/CheXNet.pth'
     model = torch.load(model_path)
     img = img.unsqueeze(0)

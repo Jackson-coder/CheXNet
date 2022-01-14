@@ -14,6 +14,7 @@ from pytorchtools import EarlyStopping
 from torch.optim import lr_scheduler
 
 
+
 def get_lr(optimizer):
     for param_group in optimizer.param_groups:
         return param_group['lr']
@@ -30,6 +31,7 @@ if __name__ == '__main__':
     num_train = len(train_labels)
     num_val = len(val_labels)
     train_batch_size = 32
+
 
     trainDataset = CheXDataset(train_images, train_labels)
     valDataset = CheXDataset(val_images, val_labels)
@@ -74,6 +76,7 @@ if __name__ == '__main__':
                 loss = model_loss(outputs, labels.to(device))
                 #
                 # loss = loss / len(outputs)
+
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
@@ -97,9 +100,7 @@ if __name__ == '__main__':
                 images, labels = batch
 
                 outputs = model(images.to(device))
-
                 loss = model_loss(outputs, labels.to(device))
-
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
@@ -110,7 +111,6 @@ if __name__ == '__main__':
                 pbar.update(1)
 
         print('Finished Validation')
-
         print('Epoch:' + str(epoch + 1) + '/' + str(epoches))
         print('Train Loss: %.3f || Val Loss: %.3f ' % (train_loss / epoch_step_train, val_loss / epoch_step_val))
 
@@ -120,7 +120,5 @@ if __name__ == '__main__':
         # early_stopping(val_loss / epoch_step_val, model)
         # if early_stopping.early_stop:
         #     break
-
     torch.save(model, 'weights/CheXNet.pth')
 
-# test123
