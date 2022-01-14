@@ -16,7 +16,7 @@ CLASS_NAMES = ['Atelectasis', 'Cardiomegaly', 'Effusion', 'Infiltration', 'Mass'
                'Pleural_Thickening', 'Hernia']
 
 if __name__ == '__main__':
-    root = "data_pic/00000001_001.png"
+    root = "data_pic/00000012_000.png"
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     img = Image.open(root).convert('RGB')
@@ -49,4 +49,4 @@ if __name__ == '__main__':
             cv2.putText(im_color, str(CLASS_NAMES[n]), (100, 100 + t), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 255), 8)
             t += 100
 
-    cv2.imwrite("img.png", im_color)
+    cv2.imwrite("img1.png", im_color)

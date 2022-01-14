@@ -24,3 +24,6 @@ python train.py
 ```
 python predict.py
 ```
+## 识别效果图示例
+![avatar](img1.png)
+![avatar](img2.png)
